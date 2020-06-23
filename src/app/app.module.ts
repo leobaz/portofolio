@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LandingBannerComponent } from './landing-banner/landing-banner.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { LandingComponent } from './landing/landing.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingBannerComponent,
+    AboutMeComponent,
+    LandingComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ScrollToModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

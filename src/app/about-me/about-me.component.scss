@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+.about-me {
+    font-family: 'Livvic', sans-serif;
+    min-height: 100vh;
+    padding: 10% 0;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    .title-row {
+        .about-me-title {
+            margin: 0 auto;
+            color: #08fdd8;
+            font-weight: 400;
+            font-size: 60px;
+            padding-bottom: 30px;
+        }
+    }
+}
+#canvas {
+    position: absolute;
+    left: 322px;
+    top: 120vh;
+    background-color: transparent;
+}

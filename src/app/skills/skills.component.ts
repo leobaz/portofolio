@@ -16,21 +16,29 @@ export class SkillsComponent implements OnInit, AfterViewInit  {
 
   async ngAfterViewInit() {
     var camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 20 );
-    camera.position.set( 0, 3, 7 );
+    camera.position.set( 0, 4, 6 );
 
     var scene = new THREE.Scene();
     camera.lookAt( scene.position );
 
     var loader = new THREE.FontLoader();
       loader.load( 'assets/fonts/helvetiker_regular.typeface.json', function ( font ) {   
-    var textPositions = [[1, 1, 1],
-                         [2, 2, 2]];
+    var textPositions = [[-1, 2, 3],
+                         [2, 2, 2],
+                         [-2, 3, 1],
+                         [1, 1, 3],
+                         [4, 3, 1],
+                         [1, 2, -3],
+                         [1, 1, 1],
+                         [4, -2, -1],
+                         [2, 1, -1],
+                         [1, 3, -1]];
 
-    var textMessages = ['Text 1', 'Text 2'];
+    var textMessages = ['Angular', 'Typescript', 'Javascript', 'HTML', 'CSS', 'Node.js', 'SCSS', 'Ionic', 'MongoDb', 'Express.js'];
 
-    var textSizes = [0.1, 0.2];
+    var textSizes = [0.3, 0.2, 0.3, 0.2, 0.2, 0.3, 0.2, 0.3, 0.2, 0.2];
 
-    var textName = ['text1', 'text2'];
+    var textName = ['angular', 'typescript', 'javascript', 'html', 'css', 'nodejs', 'scss', 'ionic', 'mongodb', 'expressjs'];
 
     var textsNumber = textPositions.length;     
 
@@ -58,7 +66,7 @@ export class SkillsComponent implements OnInit, AfterViewInit  {
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.2;
+    controls.autoRotateSpeed = 0.3;
 
     function animate() {
 

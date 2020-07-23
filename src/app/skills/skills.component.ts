@@ -65,8 +65,7 @@ export class SkillsComponent implements OnInit, AfterViewInit  {
     var controls = new OrbitControls( camera, renderer.domElement );
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.3;
+    controls.autoRotate = false;
 
     function animate() {
 

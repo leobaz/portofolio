@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+.contact {
+    font-family: 'Livvic', sans-serif;
+    min-height: 100vh;
+    padding: 10% 0;
+    padding-bottom: 5%;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    .content-row {
+        .contact-title {
+            margin: 0 auto;
+            color: #08fdd8;
+            font-weight: 400;
+            font-size: 60px;
+            padding-bottom: 30px;
+        }
+        .contact-inputs {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 0;
+            background: #2b2b2b;
+            height: 50px;
+            font-size: 16px;
+            color: #8d8d8d;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .message {
+            min-height: 150px;
+        }
+        .contact-inputs:focus {
+            outline: none;
+            border-bottom: 1px solid #08fdd8;
+        }
+        .contact-button {
+            border: 1px solid #08fdd8;
+            padding: 10px;
+            float: right;
+            text-decoration: none;
+            -webkit-transition: all ease 0.8s;
+            -moz-transition: all ease 0.8s;
+            transition: all ease 0.8s;
+        }
+        .contact-button:hover {
+            color: #2b2b2b !important;
+            box-shadow: inset 106px 0 0 0 #08fdd8;
+        }
+    }
+    .social {
+        position: relative;
+        width: 100%;
+        top: 50%;
+        left: 25%;
+        text-align: center;
+        transform: translateY(-50%);
+      }
+      
+      .social .link {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px dashed white;
+        background-clip: content-box;
+        padding: 10px;
+        transition: .5s;
+        color: #D7D0BE !important;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 70px;
+      }
+      
+      .social .link span {
+        display: block;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      .social .link:hover {
+        padding: 20px;
+        color: white;
+        margin-left: -5px;
+        transform: translateX(10px) rotate(360deg);
+      }
+      
+      .social .link.github {
+        background-color: #24292e;
+        color: white;
+      }
+      
+      .social .link.linkedin {
+        background-color: #0077b5;
+        color: white;
+      }
+      
+      .social .link.facebook {
+        background-color: #3B5998;
+        color: white;
+      }
+      
+      
+}
+// #skillscanvas {
+//     position: absolute;
+//     left: 995px;
+//     top: 210vh;
+//     background-color: transparent;
+//     outline: none;
+// }

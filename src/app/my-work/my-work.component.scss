@@ -5,13 +5,17 @@
     padding: 10% 0;
     background-color: #1d1d1d;
     color: #ffffff;
-        .title {
-            text-align: center;
-            color: #08fdd8;
-            font-weight: 400;
-            font-size: 60px;
-            padding-bottom: 30px;
-        }
+    .title {
+      text-align: center;
+      color: #08fdd8;
+      font-weight: 400;
+      font-size: 60px;
+      padding-bottom: 30px;
+    }
+    .row {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
 }
 
 .full {

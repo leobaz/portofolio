@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 @Component({
   selector: 'app-about-me',
@@ -14,37 +15,43 @@ export class AboutMeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
     
-    var canvas = <HTMLCanvasElement>document.getElementById('canvas')
-    var renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+    let canvas = <HTMLCanvasElement>document.getElementById('canvas')
+    let renderer = new THREE.WebGLRenderer({canvas, alpha: true});
     renderer.setSize( 300, 300 );
     document.body.appendChild( renderer.domElement );
     
-    var geometry = new THREE.BoxGeometry( 1,1,1 );
-    var material = [
-      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/angular.jpg') } ),
-      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/javascript.jpg') } ),
-      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/html.jpg') } ),
-      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/css.jpg') } ),
+    let geometry = new THREE.BoxGeometry( 1,1,1 );
+    let material = [
+      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/angular.png') } ),
+      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/javascript.png') } ),
+      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/html.png') } ),
+      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/css.png') } ),
       new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/ionic.png') } ),
-      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/typescript.jpg') } )
+      new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('assets/images/typescript.png') } )
     ];
-    var cube = new THREE.Mesh( geometry, material );
+    let cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
     
     cube.scale.x = 3.5;
     cube.scale.y = 3.5;
     cube.scale.z = 3.5;
 
-    camera.position.z = 5;
+    camera.position.z = 6;
+
+    let controls = new OrbitControls( camera, renderer.domElement );
+    controls.enableDamping = true;
+    controls.rotateSpeed = 0.5;
+    controls.autoRotate = false;
     
-    var animate = function () {
+    let animate = function () {
       requestAnimationFrame( animate );
     
-      cube.rotation.x += 0.02;
-      cube.rotation.y += 0.02;
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      controls.update();
     
       renderer.render( scene, camera );
     };

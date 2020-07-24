@@ -16,9 +16,19 @@
         }
     }
 }
+#note {
+    position: absolute;
+    left: 385px;
+    top: 167vh;
+    color: #ffffff;
+}
+
 #canvas {
     position: absolute;
     left: 322px;
-    top: 120vh;
+    top: 135vh;
     background-color: transparent;
+}
+#canvas:focus {
+    outline: none;
 }

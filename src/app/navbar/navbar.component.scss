@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
 
 .navbar {
+    font-family: 'Livvic', sans-serif;
     background-color: #181818 !important;
     height: 120px;
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
@@ -15,6 +16,7 @@
     }
     .nav-link:hover {
         color: #08fdd8 !important;
+        cursor: pointer;
     }
     .facebook-link {
         padding-right: 20px;
@@ -25,6 +27,7 @@
         }
     }
 }
+
 
 @media (min-width: 992px) {
     .navbar  .navbar-links {

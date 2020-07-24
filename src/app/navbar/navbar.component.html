@@ -7,19 +7,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link navbar-links" (click)="scroll('#home')">Home</a>
+        <a class="nav-link navbar-links" [routerLink]="['/']" fragment="home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link navbar-links" (click)="scroll('#about')">About</a>
+        <a class="nav-link navbar-links" [routerLink]="['/']" fragment="about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link navbar-links" (click)="scroll('#skills')">Skills</a>
+        <a class="nav-link navbar-links" [routerLink]="['/']" fragment="skills">Skills</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link navbar-links" (click)="scroll('#work')">Work</a>
+        <a class="nav-link navbar-links" [routerLink]="['/']" fragment="work">Work</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link navbar-links" (click)="scroll('#contact')">Contact</a>
+        <a class="nav-link navbar-links" [routerLink]="['/']" fragment="contact">Contact</a>
       </li>
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">

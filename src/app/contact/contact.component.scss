@@ -10,7 +10,7 @@
     .content-row {
         .contact-title {
             margin: 0 auto;
-            color: #08fdd8;
+            color: $primary-color;
             font-weight: 400;
             font-size: 60px;
             padding-bottom: 30px;
@@ -19,7 +19,7 @@
             width: 100%;
             margin-bottom: 10px;
             border: 0;
-            background: #2b2b2b;
+            background: $background-third-color;
             height: 50px;
             font-size: 16px;
             color: #8d8d8d;
@@ -31,10 +31,10 @@
         }
         .contact-inputs:focus {
             outline: none;
-            border-bottom: 1px solid #08fdd8;
+            border-bottom: 1px solid $primary-color;
         }
         .contact-button {
-            border: 1px solid #08fdd8;
+            border: 1px solid $primary-color;
             padding: 10px;
             float: right;
             text-decoration: none;
@@ -43,8 +43,8 @@
             transition: all ease 0.8s;
         }
         .contact-button:hover {
-            color: #2b2b2b !important;
-            box-shadow: inset 106px 0 0 0 #08fdd8;
+            color: $background-third-color !important;
+            box-shadow: inset 106px 0 0 0 $primary-color;
         }
     }
     .social {
@@ -63,7 +63,7 @@
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border: 2px dashed white;
+        border: 2px dashed $white;
         background-clip: content-box;
         padding: 10px;
         transition: .5s;
@@ -84,24 +84,24 @@
       
       .social .link:hover {
         padding: 20px;
-        color: white;
+        color: $white;
         margin-left: -5px;
         transform: translateX(10px) rotate(360deg);
       }
       
       .social .link.github {
         background-color: #24292e;
-        color: white;
+        color: $white;
       }
       
       .social .link.linkedin {
         background-color: #0077b5;
-        color: white;
+        color: $white;
       }
       
       .social .link.facebook {
         background-color: #3B5998;
-        color: white;
+        color: $white;
       }
 }
 

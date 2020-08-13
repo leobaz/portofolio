@@ -15,7 +15,7 @@
         font-size: 18px;
     }
     .nav-link:hover {
-        color: #08fdd8 !important;
+        color: $primary-color !important;
         cursor: pointer;
     }
     .facebook-link {
@@ -23,7 +23,7 @@
     }
     .nav-item.active {
         .nav-link {
-            color: #08fdd8 !important;
+            color: $primary-color !important;
         }
     }
 }

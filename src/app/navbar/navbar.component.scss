@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+@import "~src/assets/scss/variables";
 
 .navbar {
     font-family: 'Livvic', sans-serif;
-    background-color: #181818 !important;
+    background-color: $background-secondary-color !important;
     height: 120px;
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     .navbar-brand {
@@ -28,9 +28,40 @@
     }
 }
 
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+  
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255,255,255);
+} 
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0;
+        .navbar-brand {
+            padding-left: .5rem;
+            padding-top: .5rem;
+        }
+        .custom-toggler {
+            margin-right: .5rem;
+        }
+        .navbar-collapse {
+            background-color: $background-secondary-color;
+            .navbar-nav {
+                text-align: center;
+                .facebook-link {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
 
 @media (min-width: 992px) {
-    .navbar  .navbar-links {
-        padding-left: 35px;
+    .navbar {
+        .navbar-links {
+            padding-left: 35px;
+        }
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-my-work',
@@ -10,38 +11,61 @@ export class MyWorkComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    var gallery = document.querySelector('#gallery');
-    var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-    var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-    var resizeAll = function () {
-        var altura = getVal(gallery, 'grid-auto-rows');
-        var gap = getVal(gallery, 'grid-row-gap');
-        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-            var el = item;
-            el['style'].gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-        });
-    };
-    gallery.querySelectorAll('img').forEach(function (item) {
-        item.classList.add('byebye');
-        if (item.complete) {
-            console.log(item.src);
-        }
-        else {
-            item.addEventListener('load', function () {
-                var altura = getVal(gallery, 'grid-auto-rows');
-                var gap = getVal(gallery, 'grid-row-gap');
-                var gitem = item.parentElement.parentElement;
-                gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-                item.classList.remove('byebye');
-            });
-        }
-    });
-    window.addEventListener('resize', resizeAll);
-    gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-        item.addEventListener('click', function () {        
-            item.classList.toggle('full');        
-        });
-    });
+	$(document).keydown(function(e) {
+		switch(e.which) {
+			case 37: // left
+			this.moveToSelected('prev');
+			break;
+	
+			case 39: // right
+			this.moveToSelected('next');
+			break;
+	
+			default: return;
+		}
+		e.preventDefault();
+	});
+	var that = this;
+	
+	$('#carousel div').click(function() {
+		that.moveToSelected($(this));
+	});
+	
+	$('#prev').click(function() {
+		that.moveToSelected('prev');
+	});
+	
+	$('#next').click(function() {
+		that.moveToSelected('next');
+	});
+  }
+
+  moveToSelected(element) {
+
+	if (element == "next") {
+	  var selected = $(".selected").next();
+	} else if (element == "prev") {
+	  var selected = $(".selected").prev();
+	} else {
+	  var selected = element;
+	}
+  
+	var next = $(selected).next();
+	var prev = $(selected).prev();
+	var prevSecond = $(prev).prev();
+	var nextSecond = $(next).next();
+  
+	$(selected).removeClass().addClass("selected");
+  
+	$(prev).removeClass().addClass("prev");
+	$(next).removeClass().addClass("next");
+  
+	$(nextSecond).removeClass().addClass("nextRightSecond");
+	$(prevSecond).removeClass().addClass("prevLeftSecond");
+  
+	$(nextSecond).nextAll().removeClass().addClass('hideRight');
+	$(prevSecond).prevAll().removeClass().addClass('hideLeft');
+  
   }
 
 }

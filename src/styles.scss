@@ -1,11 +1,16 @@
-@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+@import "~src/assets/scss/variables";
 
 html {scroll-behavior: smooth;}
 
 body {
     font-family: 'Livvic', sans-serif;
-    background: #1d1d1d;
+    background: $background-primary-color;
 }
 a {
     color: #08fdd8 !important;
+}
+.alertify-notifier .ajs-message {
+    background-color: rgba(0,0,0,.9) !important;
+    color: $white !important;
+    border-color: rgba(0,0,0,.9) !important;
 }

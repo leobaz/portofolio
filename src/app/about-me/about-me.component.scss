@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+@import "~src/assets/scss/variables";
+
 .about-me {
     font-family: 'Livvic', sans-serif;
     min-height: 100vh;
     padding: 10% 0;
     padding-bottom: 5%;
-    background-color: #1d1d1d;
-    color: #ffffff;
+    background-color: $background-primary-color;
+    color: $white;
     .title-row {
         .about-me-title {
             margin: 0 auto;
@@ -16,12 +17,6 @@
         }
     }
 }
-#note {
-    position: absolute;
-    left: 385px;
-    top: 167vh;
-    color: #ffffff;
-}
 
 #canvas {
     position: absolute;
@@ -31,4 +26,37 @@
 }
 #canvas:focus {
     outline: none;
+}
+
+@media (max-width: 1440px) {
+    #canvas {
+        left: 160px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #canvas {
+        left: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    #canvas {
+        display: none;
+    }
+    .about-me {
+        .title-row {
+            text-align: center;
+            .about-me-title {
+                font-size: 45px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .about-me {
+        padding-top: 23%;
+    }
 }

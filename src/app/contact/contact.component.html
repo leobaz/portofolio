@@ -4,7 +4,7 @@
             <div class="col-md-7 content-row">
                 <h1 class="contact-title">Contact me</h1>
                 <p>Interested in freelance projects, espacially ambitious or large projects.</p>
-                <p>For any questions or inquiry feel free to contact me using the form below or the social medias in the right.</p>
+                <p>For any questions or inquiry feel free to contact me using the form below or any of the social medias.</p>
                 <form class="contact-form">
                     <input name="email" type="email" class="contact-inputs email" placeholder="Email">
                     <br>
@@ -12,7 +12,7 @@
                     <br>
                     <textarea name="message" class="contact-inputs message" placeholder="Message"></textarea>
                     <br>
-                    <a href="mailto:leutrim.kosumi@hotmail.com?subject=The%20subject%20of%20the%20mail&body=Thebodyyy" class="contact-button">Contact me</a>
+                    <a (click)="sendMail()" href="mailto:{{mailto}}" class="contact-button">Contact me</a>
                 </form>
             </div>
             <div class="col-md-5">

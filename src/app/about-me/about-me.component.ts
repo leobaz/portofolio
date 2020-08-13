@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+var alertify = require('alertifyjs');
 
 @Component({
   selector: 'app-about-me',
@@ -12,6 +13,7 @@ export class AboutMeComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit() {
+    alertify.notify('Scroll inside animations to zoom in/out');
   }
 
   ngAfterViewInit() {
@@ -20,7 +22,7 @@ export class AboutMeComponent implements OnInit, AfterViewInit {
     
     let canvas = <HTMLCanvasElement>document.getElementById('canvas')
     let renderer = new THREE.WebGLRenderer({canvas, alpha: true});
-    renderer.setSize( 300, 300 );
+    renderer.setSize( 400, 400 );
     document.body.appendChild( renderer.domElement );
     
     let geometry = new THREE.BoxGeometry( 1,1,1 );

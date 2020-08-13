@@ -15,7 +15,7 @@ export class SkillsComponent implements OnInit, AfterViewInit  {
   }
 
   async ngAfterViewInit() {
-    var camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 20 );
+    var camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.02, 20 );
     camera.position.set( 0, 4, 6 );
 
     var scene = new THREE.Scene();
@@ -24,19 +24,19 @@ export class SkillsComponent implements OnInit, AfterViewInit  {
     var loader = new THREE.FontLoader();
       loader.load( 'assets/fonts/helvetiker_regular.typeface.json', function ( font ) {   
     var textPositions = [[-1, 2, 3],
-                         [2, 2, 2],
-                         [-2, 3, 1],
-                         [1, 1, 3],
-                         [4, 3, 1],
-                         [1, 2, -3],
-                         [1, 1, 1],
-                         [4, -2, -1],
+                         [-3, 2, 2],
+                         [-4, 3, 1],
+                         [-1, 1, 3],
+                         [1, 3, 1],
+                         [-2, 2, -3],
+                         [-5, 1, 1],
+                         [-4, -1, -1],
                          [2, 1, -1],
-                         [1, 3, -1]];
+                         [0, 3, -1]];
 
     var textMessages = ['Angular', 'Typescript', 'Javascript', 'HTML', 'CSS', 'Node.js', 'SCSS', 'Ionic', 'MongoDb', 'Express.js'];
 
-    var textSizes = [0.3, 0.2, 0.3, 0.2, 0.2, 0.3, 0.2, 0.3, 0.2, 0.2];
+    var textSizes = [0.3, 0.2, 0.3, 0.2, 0.2, 0.3, 0.2, 0.3, 0.3, 0.3];
 
     var textName = ['angular', 'typescript', 'javascript', 'html', 'css', 'nodejs', 'scss', 'ionic', 'mongodb', 'expressjs'];
 
@@ -58,7 +58,7 @@ export class SkillsComponent implements OnInit, AfterViewInit  {
 
     var canvas = <HTMLCanvasElement>document.getElementById('skillscanvas');
     var renderer = new THREE.WebGLRenderer({canvas, alpha: true,antialias: true});
-    renderer.setSize( 700, 700 );
+    renderer.setSize( 500, 500 );
     document.body.appendChild( renderer.domElement );
 
 

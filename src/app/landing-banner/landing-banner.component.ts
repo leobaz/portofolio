@@ -7,15 +7,11 @@ import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scrol
   styleUrls: ['./landing-banner.component.scss']
 })
 export class LandingBannerComponent implements OnInit {
-
-  private typewriter_title: string = "Hi, I'm Leutrim Kosumi. I'm a front-end developer.";
-  private typewriter_display: string = "";
   constructor(
     private _scrollToService: ScrollToService
   ) { }
 
   ngOnInit() {
-    this.typingCallback(this);
   }
 
   scrollToAbout(): void {
@@ -26,15 +22,6 @@ export class LandingBannerComponent implements OnInit {
       offset: 10
     };
     this._scrollToService.scrollTo(config);
-  }
-
-  typingCallback(that) {
-    let total_length = that.typewriter_title.length;
-    let current_length = that.typewriter_display.length;
-    if (current_length < total_length) {
-      that.typewriter_display += that.typewriter_title[current_length];
-      setTimeout(that.typingCallback, 100, that);
-    }
   }
 
 }

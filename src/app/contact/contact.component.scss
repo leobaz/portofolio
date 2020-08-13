@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Livvic&display=swap);
+@import "~src/assets/scss/variables";
+
 .contact {
     font-family: 'Livvic', sans-serif;
     min-height: 100vh;
     padding: 10% 0;
     padding-bottom: 5%;
-    background-color: #1d1d1d;
-    color: #ffffff;
+    background-color: $background-primary-color;
+    color: $white;
     .content-row {
         .contact-title {
             margin: 0 auto;
@@ -102,13 +103,41 @@
         background-color: #3B5998;
         color: white;
       }
-      
-      
 }
-// #skillscanvas {
-//     position: absolute;
-//     left: 995px;
-//     top: 210vh;
-//     background-color: transparent;
-//     outline: none;
-// }
+
+@media(max-width: 1024px) {
+  .contact {
+    .social {
+      left: 5%;
+    }
+  }
+}
+@media(max-width: 768px) {
+  .contact {
+      .social {
+        left: 0;
+        .link {
+          margin-bottom: 15px;
+        }
+      }
+      .content-row {
+        text-align: center;
+        .contact-title {
+            font-size: 45px;
+            text-align: center;
+        }
+        .contact-form {
+          padding-bottom: 40px;
+          .contact-button {
+            float: none;
+          }
+        }
+    }
+  } 
+}
+
+@media (max-width: 600px) {
+  .contact {
+      padding-top: 23%;
+  }
+}

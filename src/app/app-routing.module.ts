@@ -1,20 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
+import { NgModule } from "@angular/core";
+import { ExtraOptions, RouterModule, Routes } from "@angular/router";
 
-
-const routes: Routes = [
-  {path: '', component: LandingComponent}
-];
+const routes: Routes = [];
 
 const routerOptions: ExtraOptions = {
   useHash: false,
-  anchorScrolling: 'enabled',
-  onSameUrlNavigation: 'reload'
+  anchorScrolling: "enabled",
+  onSameUrlNavigation: "reload",
 };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routerOptions)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

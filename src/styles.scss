@@ -1,16 +1,18 @@
-@import "~src/assets/scss/variables";
+@import "src/assets/scss/variables";
 
-html {scroll-behavior: smooth;}
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Livvic', sans-serif;
-    background: $background-primary-color;
+  font-family: "Livvic", sans-serif;
+  background: $background-primary-color;
 }
 a {
-    color: $primary-color !important;
+  color: $primary-color !important;
 }
 .alertify-notifier .ajs-message {
-    background-color: rgba(0,0,0,.9) !important;
-    color: $white !important;
-    border-color: rgba(0,0,0,.9) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: $white !important;
+  border-color: rgba(0, 0, 0, 0.9) !important;
 }

@@ -1,0 +1,199 @@
+<section>
+  <h3 class="title">Projects</h3>
+
+  <div class="card">
+    <h4 class="card-title">Open Contracts</h4>
+
+    <p class="card-description">
+      The purpose of this platform is to inform the citizens of the
+      Municipalities on the procurement processes/contracts signed by this
+      institution.
+    </p>
+
+    <div class="card-skills">
+      <span>Angular</span>
+      <span>Typescript</span>
+      <span>Node.js</span>
+      <span>MongoDB</span>
+      <span>Express.js</span>
+      <span>Bootstrap</span>
+    </div>
+
+    <div class="actions">
+      <button
+        (click)="goToWebsite('https://kontratat.rks-gov.net/lipjan/en')"
+        class="btn btn-primary website-btn"
+      >
+        Website <i class="fa fa-external-link"></i>
+      </button>
+
+      <button
+        (click)="
+          goToWebsite('https://github.com/opendatakosovo/open-contracts-app')
+        "
+        class="btn btn-secondary source-btn"
+      >
+        <i class="fa fa-github-square"></i> Source Code
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 class="card-title">AAP OEK</h4>
+
+    <p class="card-description">
+      The platform of the Kosovo Chamber of Commerce for professional practice
+      helps young people to find the place of professional practice that they
+      want most in their professional career.
+    </p>
+
+    <div class="card-skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>jQuery</span>
+      <span>Node.js</span>
+      <span>MongoDB</span>
+      <span>Express.js</span>
+      <span>Bootstrap</span>
+    </div>
+
+    <div class="actions">
+      <button
+        (click)="goToWebsite('https://www.aap-oek.org/')"
+        class="btn btn-primary website-btn"
+      >
+        Website <i class="fa fa-external-link"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 class="card-title">123mobile</h4>
+
+    <p class="card-description">
+      The platform of the Kosovo Chamber of Commerce for professional practice
+      helps young people to find the place of professional practice that they
+      want most in their professional career.
+    </p>
+
+    <div class="card-skills">
+      <span>Shopify</span>
+      <span>Liquid</span>
+      <span>HTML</span>
+      <span>CSS</span>
+    </div>
+
+    <div class="actions">
+      <button
+        data-toggle="modal"
+        data-target="#exampleModal"
+        class="btn btn-primary website-btn"
+        (click)="assignModalGallery('123mobile')"
+      >
+        Gallery
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 class="card-title">Bookings</h4>
+
+    <p class="card-description">
+      App to create Airbnb-style property listings with pages to make bookings
+      and update property details
+    </p>
+
+    <div class="card-skills">
+      <span>Ionic</span>
+      <span>Angular</span>
+      <span>Typescript</span>
+      <span>RxJs</span>
+      <span>Google Maps</span>
+      <span>Firebase</span>
+    </div>
+
+    <div class="actions">
+      <button
+        data-toggle="modal"
+        data-target="#exampleModal"
+        class="btn btn-primary website-btn"
+        (click)="assignModalGallery('bookings')"
+      >
+        Gallery
+      </button>
+
+      <button
+        (click)="
+          goToWebsite('https://github.com/leobaz/ionic-angular-bookings')
+        "
+        class="btn btn-secondary source-btn"
+      >
+        <i class="fa fa-github-square"></i> Source Code
+      </button>
+    </div>
+  </div>
+</section>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ modalData.title }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            @for(image of modalData.gallery; track image.imageUrl) {
+            <div class="carousel-item" [class]="{ active: image.active }">
+              <img
+                [src]="image.imageUrl"
+                class="d-block w-100"
+                [alt]="image.imageUrl"
+              />
+            </div>
+            }
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

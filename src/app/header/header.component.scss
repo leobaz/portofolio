@@ -1,0 +1,50 @@
+@import "src/assets/scss/variables";
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.2em;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  a {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    margin-left: 30px;
+    color: $text-color;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: $primary-color;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  a:hover::after,
+  a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+  }
+
+  a::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  a:hover::after,
+  a:focus::after {
+    transform: scale(1);
+  }
+}

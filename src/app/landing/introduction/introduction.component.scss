@@ -1,0 +1,46 @@
+@import "src/assets/scss/variables";
+
+section {
+  margin-bottom: 50px;
+  h1 {
+    color: $primary-color;
+  }
+
+  .container {
+    display: inline-block;
+    width: fit-content;
+    padding: 0;
+  }
+  .typed-out {
+    overflow: hidden;
+    border-right: 0.15em solid $primary-color;
+    white-space: nowrap;
+    animation: typing 1s steps(20, end) forwards,
+      blink-caret 0.75s step-end infinite;
+    font-size: 3.2rem;
+    width: 0;
+  }
+
+  p {
+    color: $text-color;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $primary-color;
+  }
+}
